@@ -9,14 +9,28 @@ class Tenant1Subdomain
         end
     end   
 end
+
+class Tenant2Subdomain
+    def self.matches? request
+        case request.subdomain
+        when 'tenant2'
+            true
+        else
+            false
+        end
+    end   
+end
  
- 
+
 Rails.application.routes.draw do
   resources :customers
   
    # Tenant1 routes
     constraints(Tenant1Subdomain) do
         resources :projects
+    end
+    constraints(Tenant2Subdomain) do
+      resources :tasks
     end
 
   # The priority is based upon order of creation: first created -> highest priority.

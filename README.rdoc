@@ -4,8 +4,6 @@ Multitenancy for Rails and ActiveRecord
 
 Apartment provides tools to help you deal with multiple tenants in your Rails application. If you need to have certain data sequestered based on account or company, but still allow some data to exist in a common tenant, Apartment can help.
 
-Note: All the subdomains that are created must be mapped to particular IP in /etc/hosts file
-
 
 Models specific to particular Tenant:
 --------------------------------------
